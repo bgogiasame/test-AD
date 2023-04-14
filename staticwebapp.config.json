@@ -4,7 +4,7 @@
       "route": "/*",
       "allowedRoles": ["authenticated"],
       "authentication": {
-        "identityProviders": ["AzureActiveDirectory"]
+        "identityProviders": ["azureActiveDirectory"]
       }
     }
   ],
