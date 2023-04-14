@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/profile",
+      "allowedRoles": ["authenticated"],
+      "authentication": {
+        "identityProviders": ["AzureActiveDirectory"]
+      }
+    }
+  ],
+  "identity": {
+    "type": "aad",
+    "clientId": "<your-client-id>",
+    "tenantId": "<your-tenant-id>"
+  }
+}
