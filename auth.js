@@ -18,7 +18,7 @@ async function getAccessToken() {
     console.error(error);
   }
     const silentRequest = {
-      scopes: ['user.read', 'mail.read'], // the scopes you need to access the Graph API
+      scopes: ['user.read'], // the scopes you need to access the Graph API
       account: accounts[0] // the signed-in user account
     };
     const response = await msalInstance.acquireTokenSilent(silentRequest);
