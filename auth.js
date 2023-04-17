@@ -11,7 +11,12 @@ const msalInstance = new msal.PublicClientApplication(msalConfig);
 // Call this function when you need to get an access token
 async function getAccessToken() {
   try {
-    const accounts = await msalInstance.getAllAccounts();
+    try {
+    const accounts = msalInstance.getAllAccounts();
+    console.log(accounts);
+  } catch (error) {
+    console.error(error);
+  }
     const silentRequest = {
       scopes: ['user.read', 'mail.read'], // the scopes you need to access the Graph API
       account: accounts[0] // the signed-in user account
