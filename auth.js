@@ -22,3 +22,20 @@ async function getAccessToken() {
     console.log(error);
   }
 }
+
+async function getProfile() {
+  const accessToken = await getAccessToken();
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${accessToken}`
+    }
+  };
+
+  const response = await fetch('https://graph.microsoft.com/v1.0/me', options);
+  const data = await response.json();
+
+  console.log(data);
+}
+
