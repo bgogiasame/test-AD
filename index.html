@@ -7,5 +7,15 @@
     <h1>Welcome to my dummy frontend app!</h1>
     <p>This is just a placeholder app to test out deploying static web apps.</p>
     <button onclick="window.open('https://graph.microsoft.com/v1.0/me', '_blank')">Open URL</button>
+    <button id="profile-button">Get Profile</button>
+
+    <script src="https://alcdn.msauth.net/browser/2.16.0/js/msal-browser.min.js"></script>
+    <script src="auth.js"></script>
+    <script>
+      const profileButton = document.getElementById('profile-button');
+      profileButton.addEventListener('click', () => {
+        getProfile();
+      });
+    </script>
   </body>
 </html>
