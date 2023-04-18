@@ -2,7 +2,7 @@ const msalConfig = {
   auth: {
     clientId: '94829e70-426d-44f2-922f-12fa2a96469a',
     authority: 'https://login.microsoftonline.com/f535660a-7493-4c77-8b92-5bbceef5bdcc',
-    redirectUri: window.location.href // your redirect URI
+    redirectUri: 'https://zealous-rock-0d241fe00.3.azurestaticapps.net/.auth/login/aad/callback' // your redirect URI
   },
    cache: {
     cacheLocation: 'localStorage',
@@ -18,10 +18,10 @@ async function getAccessToken() {
 msalInstance
   .handleRedirectPromise()
   .then((tokenResponse) => {
-    // Handle redirect response
+    console.log(tokenresponse); // Handle redirect response
   })
   .catch((error) => {
-    // Handle redirect error
+    console.log(error);// Handle redirect error
   });
     var loginRequest = {
        scopes: ["user.read"] // optional Array<string>
@@ -29,10 +29,10 @@ msalInstance
 
     msalInstance.loginPopup(loginRequest)
         .then(response => {
-            // handle response
+            console.log(response)// handle response
         })
         .catch(err => {
-            // handle error
+            console.log(err); // handle error
         });
     const abc = msalInstance.getActiveAccount();
     const accounts = msalInstance.getAllAccounts();
