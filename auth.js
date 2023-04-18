@@ -10,12 +10,19 @@ const msalConfig = {
   }
 };
 
-const msalInstance = new msal.UserAgentApplication(msalConfig);
-
 // Call this function when you need to get an access token
 async function getAccessToken() {
   try {
-    msalInstance = new msal.UserAgentApplication(msalConfig);
+    const msalInstance = new PublicClientApplication(msalConfig);
+    // Handle the redirect flows
+msalInstance
+  .handleRedirectPromise()
+  .then((tokenResponse) => {
+    // Handle redirect response
+  })
+  .catch((error) => {
+    // Handle redirect error
+  });
     const accounts = msalInstance.getAllAccounts();
 
 // Print the account information for each account
