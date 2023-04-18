@@ -23,17 +23,17 @@ msalInstance
   .catch((error) => {
     console.log(error);// Handle redirect error
   });
-    var loginRequest = {
-       scopes: ["user.read"] // optional Array<string>
-   };
+   // var loginRequest = {
+   //    scopes: ["user.read"] // optional Array<string>
+   //};
 
-    msalInstance.loginPopup(loginRequest)
-        .then(response => {
-            console.log(response)// handle response
-        })
-        .catch(err => {
-            console.log(err); // handle error
-        });
+    //msalInstance.loginPopup(loginRequest)
+     //   .then(response => {
+     //       console.log(response)// handle response
+    //    })
+    //    .catch(err => {
+     //       console.log(err); // handle error
+    //    });
     const abc = msalInstance.getActiveAccount();
     const accounts = msalInstance.getAllAccounts();
 
