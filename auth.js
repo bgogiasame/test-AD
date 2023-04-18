@@ -23,6 +23,17 @@ msalInstance
   .catch((error) => {
     // Handle redirect error
   });
+    var loginRequest = {
+       scopes: ["user.read"] // optional Array<string>
+   };
+
+    msalInstance.loginPopup(loginRequest)
+        .then(response => {
+            // handle response
+        })
+        .catch(err => {
+            // handle error
+        });
     const abc = msalInstance.getActiveAccount();
     const accounts = msalInstance.getAllAccounts();
 
