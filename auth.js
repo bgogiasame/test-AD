@@ -2,7 +2,7 @@ const msalConfig = {
   auth: {
     clientId: '94829e70-426d-44f2-922f-12fa2a96469a',
     authority: 'https://login.microsoftonline.com/f535660a-7493-4c77-8b92-5bbceef5bdcc',
-    redirectUri: 'https://zealous-rock-0d241fe00.3.azurestaticapps.net/.auth/login/aad/callback' // your redirect URI
+    redirectUri: 'https://zealous-rock-0d241fe00.3.azurestaticapps.net' // your redirect URI
   },
    cache: {
     cacheLocation: 'localStorage',
