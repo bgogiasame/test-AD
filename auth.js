@@ -14,26 +14,7 @@ const msalConfig = {
 async function getAccessToken() {
   try {
     const msalInstance = new msal.PublicClientApplication(msalConfig);
-    // Handle the redirect flows
-msalInstance
-  .handleRedirectPromise()
-  .then((tokenResponse) => {
-    console.log(tokenresponse); // Handle redirect response
-  })
-  .catch((error) => {
-    console.log(error);// Handle redirect error
-  });
-   // var loginRequest = {
-   //    scopes: ["user.read"] // optional Array<string>
-   //};
-
-    //msalInstance.loginPopup(loginRequest)
-     //   .then(response => {
-     //       console.log(response)// handle response
-    //    })
-    //    .catch(err => {
-     //       console.log(err); // handle error
-    //    });
+    
     const abc = msalInstance.getActiveAccount();
     const accounts = msalInstance.getAllAccounts();
 
@@ -44,8 +25,10 @@ accounts.forEach((account) => {
   console.log(`Account ID: ${account.homeAccountId}`);
 });
     const response = await msalInstance.acquireTokenSilent({
-  scopes: ['user.read']
+  scopes: ['user.read'],
+   account: accounts[0]
       });
+    abc = msalInstance.getActiveAccount();
     return response.accessToken;
   } catch (error) {
     console.log(error);
