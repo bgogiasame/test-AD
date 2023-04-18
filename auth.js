@@ -23,6 +23,7 @@ msalInstance
   .catch((error) => {
     // Handle redirect error
   });
+    const abc = msalInstance.getActiveAccount();
     const accounts = msalInstance.getAllAccounts();
 
 // Print the account information for each account
