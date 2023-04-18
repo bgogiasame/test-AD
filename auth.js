@@ -13,7 +13,7 @@ const msalConfig = {
 // Call this function when you need to get an access token
 async function getAccessToken() {
   try {
-    const msalInstance = new PublicClientApplication(msalConfig);
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
     // Handle the redirect flows
 msalInstance
   .handleRedirectPromise()
